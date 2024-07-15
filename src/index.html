@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Simple Voting WEBSITE</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">VOTING WEBSITE</h1>
+          <span>you are voting from account &nbsp;</span><span id="accounts"></span>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <main role="main" class="col-lg-12 d-flex justify-content-center">
+            <div id="loader" class="text-center">
+              <p class="text-center">Loading...</p>
+            </div>
+
+
+            
+
+            <div id="content">
+              <form onsubmit="App.addCandidate(); return false;">
+                <input type="test" class="form-control" placeholder="Candidate Name" id="newCandidate" required>
+                <input type="submit" hidden="">
+              </form>
+
+
+
+              <form onSubmit="App.castVote(); return false;" id="votingForm">
+                <div class="form-group">
+                  <label for="candidatesSelect">Select Candidate</label>
+                  <select class="form-control" id="candidatesSelect">
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Vote</button>
+                <hr />
+              </form>
+
+
+              <ul id="candidateList" class="list-unstyled">
+                <label style="width: 100%; margin: 0 auto;">
+                  <span class="id" style="display: inline-block; width: 31.33%;">Candidate ID</span>
+                  <span class="content name" style="display: inline-block; width: 31.33%;">Register Candidates Name</span>
+                  <span class="votes" style="display: inline-block; width: 31.33%;">Votes gained</span>
+                </label>
+                <hr />
+                <div class="candidateTemplate">
+                  <label style="width: 100%;">
+                    <label style="width: 100%;">
+                      <span class="id" style="display: inline-block; width: 31.33%;"></span>
+                      <span class="content name" style="display: inline-block; width: 31.33%;"></span>
+                      <span class="votes" style="display: inline-block; width: 31.33%;"></span>
+                    
+                    </label>
+                  </label>
+                  <br>
+                </div>
+              </ul>
+              <ul id="completedTaskList" class="list-unstyled">
+              </ul>
+
+
+            </div>
+          </main>
+        </div>
+      </div>
+
+    </div>
+
+   
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
